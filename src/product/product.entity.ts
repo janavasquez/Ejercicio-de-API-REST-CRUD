@@ -17,7 +17,7 @@ export class Product {
     price: number;
 
     @Column()
-    @OneToMany(() => Manufacturer, manufacturer => manufacturer.name)
+    @ManyToOne(() => Manufacturer, manufacturer => manufacturer.name)
     manufacturer: Manufacturer[];
     
 }
