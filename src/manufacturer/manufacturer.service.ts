@@ -16,33 +16,33 @@ export class ManufacturerService {
   }
 
   obtenerProducto1(): Observable<Manufacturer> {
-    return this.httpClient.get<Manufacturer>('https://fakestoreapi.com/Manufacturer/1');
+    return this.httpClient.get<Manufacturer>('http://localhost:3000/manufacturer/1');
   }
 
   // Obtener todos los productos:
   findAll(): Observable<Manufacturer[]> {
-    return this.httpClient.get<Manufacturer[]>('https://fakestoreapi.com/Manufacturer');
+    return this.httpClient.get<Manufacturer[]>('http://localhost:3000/manufacturer');
   }
   // Obtener un producto por su id como parámetro:
   findById(id: number | string): Observable<Manufacturer> {
     // return this.httpClient.get<Product>(`https://fakestoreapi.com/products/${id}`);
-    return this.httpClient.get<Manufacturer>('https://fakestoreapi.com/manufacturer/' + id);
+    return this.httpClient.get<Manufacturer>('http://localhost:3000/manufacturer/' + id);
   }
 
   // Método create para enviar un producto al API REST
   // Esto crearía un nuevo producto en base de datos
   create(manufacturer: Manufacturer): Observable<Manufacturer> {
-    return this.httpClient.post<Manufacturer>('https://fakestoreapi.com/manufacturer', manufacturer);
+    return this.httpClient.post<Manufacturer>('http://localhost:3000/manufacturer', manufacturer);
   }
 
   // Método para actualizar un producto en el API REST
   update(id: number | string, manufacturer: Manufacturer): Observable<Manufacturer> {
-    return this.httpClient.put<Manufacturer>('https://fakestoreapi.com/manufacturer/' + id, manufacturer);
+    return this.httpClient.put<Manufacturer>('http://localhost:3000/manufacturer/' + id, manufacturer);
   }
 
   // Método para borrar un producto
   deleteById(id: number | string) {
-    return this.httpClient.delete('https://fakestoreapi.com/manufacturer/' + id);
+    return this.httpClient.delete('http://localhost:3000/manufacturer/' + id);
   }
 
 }
